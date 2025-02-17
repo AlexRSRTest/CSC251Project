@@ -89,42 +89,42 @@ public class Policy
    
    
    //Getters
-   public String setPolicyNumber()
+   public String getPolicyNumber()
    {
       return policyNumber;
    }
    
-   public String setproviderName()
+   public String getproviderName()
    {
       return providerName;
    }
    
-   public String setFirstName()
+   public String getFirstName()
    {
       return firstName;
    }
    
-   public String setlastName()
+   public String getlastName()
    {
       return lastName;
    }
    
-   public String setsmokingStatus()
+   public String getsmokingStatus()
    {
       return smokingStatus;
    }
    
-   public int setAge()
+   public int getAge()
    {
       return age;
    }
    
-   public double setHeight()
+   public double getHeight()
    {
       return height;
    }
    
-   public double setWeight()
+   public double getWeight()
    {
       return weight;
    }

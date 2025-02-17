@@ -31,4 +31,11 @@ public static void main(String[] args)
    
    System.out.print("Please enter the Policyholder's Weight (in pounds): ");
    double weight = scanner.nextDouble();
+   
+   Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
+   
+   System.out.println("Policy Number: " + policy.getPolicyNumber());
+   System.out.println("Provider Name: " + policy.getProviderName());
+   System.out.println("Provider's First Name: " + policy.getFirstName());
+   System.out.println("Provider's Last Name: " + policy.getLastName());
 }
