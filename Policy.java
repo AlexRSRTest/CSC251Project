@@ -14,9 +14,9 @@ public class Policy
    
    private int age;
    //Height specified in inches
-   private int height;
+   private double height;
    //Weght specified in lbs
-   private int weight;
+   private double weight;
    
 
    //no-arg constructor
@@ -33,7 +33,7 @@ public class Policy
    }
    
    //Constructor that accepts arguments
-   public Policy(String policyNumber, String providerName, String firstName, String LastName, int age, String smokingStatus, int height, int weight)
+   public Policy(String policyNumber, String providerName, String firstName, String LastName, int age, String smokingStatus, double height, double weight)
    {
       policyNumber = policyNumber;
       providerName = providerName;
@@ -77,12 +77,12 @@ public class Policy
       age = age;
    }
    
-   public void setHeight(int height)
+   public void setHeight(double height)
    {
       height = height;
    }
    
-   public void setWeight(int weight)
+   public void setWeight(double weight)
    {
       weight = weight;
    }
@@ -119,12 +119,12 @@ public class Policy
       return age;
    }
    
-   public int setHeight()
+   public double setHeight()
    {
       return height;
    }
    
-   public int setWeight()
+   public double setWeight()
    {
       return weight;
    }
