@@ -3,7 +3,7 @@
    for one person. Containing the following: Policy Number, Provider Name, First Name,
    Last Name, Age, Smoking Status, Height, and Weight.
 */
-
+import java.lang.*;
 public class Policy
 {
    private String policyNumber;
@@ -33,58 +33,58 @@ public class Policy
    }
    
    //Constructor that accepts arguments
-   public Policy(String policyNumber, String providerName, String firstName, String LastName, int age, String smokingStatus, double height, double weight)
+   public Policy(String policyNumber1, String providerName1, String firstName1, String lastName1, int age1, String smokingStatus1, double height1, double weight1)
    {
-      policyNumber = policyNumber;
-      providerName = providerName;
-      firstName = firstName;
-      lastName = lastName;
-      smokingStatus = smokingStatus;
-      age = age;
-      height = height;
-      weight = weight;
+      policyNumber = policyNumber1;
+      providerName = providerName1;
+      firstName = firstName1;
+      lastName = lastName1;
+      smokingStatus = smokingStatus1;
+      age = age1;
+      height = height1;
+      weight = weight1;
    }
    
    //The Getters and Setters for all of the fields
    //Getters
-   public void setPolicyNumber(String policyNumber)
+   public void setPolicyNumber(String policyNumber1)
    {
-      policyNumber = policyNumber;
+      policyNumber = policyNumber1;
    }
    
-   public void setproviderName(String providerName)
+   public void setproviderName(String providerName1)
    {
-      providerName = providerName;
+      providerName = providerName1;
    }
    
-   public void setfirstName(String firstName)
+   public void setfirstName(String firstName1)
    {
-      firstName = firstName;
+      firstName = firstName1;
    }
    
-   public void setlastName(String lastName)
+   public void setlastName(String lastName1)
    {
-      lastName = lastName;
+      lastName = lastName1;
    }
    
-   public void setsmokingStatus(String smokingStatus)
+   public void setsmokingStatus(String smokingStatus1)
    {
-      smokingStatus = smokingStatus;
+      smokingStatus = smokingStatus1;
    }
    
-   public void setAge(int age)
+   public void setAge(int age1)
    {
-      age = age;
+      age = age1;
    }
    
-   public void setHeight(double height)
+   public void setHeight(double height1)
    {
-      height = height;
+      height = height1;
    }
    
-   public void setWeight(double weight)
+   public void setWeight(double weight1)
    {
-      weight = weight;
+      weight = weight1;
    }
    
    
@@ -145,9 +145,13 @@ public class Policy
          policyPrice += 75;
       }
       
-      if(smokingStatus.equals("smoker"))
+      if(smokingStatus.equalsIgnoreCase("smoker"))
       {
          policyPrice += 100;
+      }
+      else
+      {
+         policyPrice += 0;
       }
       
       double bmi = solveBMI();
