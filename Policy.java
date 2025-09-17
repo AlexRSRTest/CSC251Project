@@ -6,7 +6,7 @@ public class Policy
    private String firstName;
    private String lastName;
    private int age;
-   private boolean smoke;
+   private String smoke;
    private double height;
    private double weight;
    
@@ -18,7 +18,7 @@ public class Policy
       firstName = "";
       lastName = "";
       age = 0;
-      smoke = false;
+      smoke = "";
       height = 0.0;
       weight = 0.0;
    }
@@ -34,7 +34,7 @@ public class Policy
       @param h The policy holder's height.
       @param w The policy holder's weight.
    */
-   public Policy(int num, String provider, String fName, String lName, int a, boolean s, double h, double w)
+   public Policy(int num, String provider, String fName, String lName, int a, String s, double h, double w)
    {
       policyNumber = num;
       providerName = provider;
@@ -95,7 +95,7 @@ public class Policy
       setSmoke A mutator method to store the smoking status.
       @param s The smoking status.
    */
-   public void setSmoke(boolean s)
+   public void setSmoke(String s)
    {
       smoke = s;
    }
@@ -169,7 +169,7 @@ public class Policy
       getSmoke An accessor method.
       @return The user's smoking status
    */
-   public boolean getSmoke()
+   public String getSmoke()
    {
       return smoke;
    }
@@ -222,7 +222,7 @@ public class Policy
          additionalFee += ageFee;
       }
       
-      if (smoke == true)
+      if (smoke.equals("smoker"))
       {
          additionalFee += smokeFee;
       }
