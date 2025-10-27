@@ -78,7 +78,8 @@ public class Project_Alex_SantiagoResendiz
    */
    public static void getInfo(ArrayList<Policy> list)
    {
-      // Display the user's input.
+      int totalSmokers = 0;
+      // Display the ArrayList's instances info.
       for (Policy displayList : list) {
          System.out.println("Policy Number: " + displayList.getPolicyNum());
          System.out.println("Provider Name: " + displayList.getProvider());
@@ -91,7 +92,13 @@ public class Project_Alex_SantiagoResendiz
          System.out.printf("Policyholder's BMI: %,.2f\n", displayList.calculateBMI());
          System.out.printf("Policy Price: $%,.2f\n", displayList.insurancePrice());
          
+         if (displayList.getSmoke().equalsIgnoreCase("smoker")) {
+            totalSmokers++;
+         }
          System.out.println("\n");
       }
+      
+      System.out.println("The number of policies with a smoker is: " + totalSmokers);
+      System.out.println("The number of policies with a non-smoker is: " + (list.size() - totalSmokers));
    }
 }
