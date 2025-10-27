@@ -1,3 +1,7 @@
+/**
+   Step 1: Already completed with the implementations of adding
+   documentation comments using @param & @return.
+*/
 public class Policy
 {
    // Fields
@@ -25,14 +29,14 @@ public class Policy
    
    /**
       Arg Constructor
-      @param num The policyNumber.
-      @param provider The providerName.
-      @param fName The user's name.
-      @param lName The user's last name.
-      @param a The user's age.
-      @param s The smoking status.
-      @param h The policy holder's height.
-      @param w The policy holder's weight.
+      @param num The policyNumber as an int.
+      @param provider The providerName as a string.
+      @param fName The user's name, string data type.
+      @param lName The user's last name, string data type.
+      @param a The user's age, int data type.
+      @param s The smoking status, string data type.
+      @param h The policy holder's height, double data type.
+      @param w The policy holder's weight, double data type.
    */
    public Policy(int num, String provider, String fName, String lName, int a, String s, double h, double w)
    {
@@ -47,7 +51,7 @@ public class Policy
    }
    
    /**
-      setPolicyNum A mutator method to store the policy number.
+      setPolicyNum A mutator/setter method to store the policy number.
       @param num THe policy number.
    */
    public void setPolicyNum(int num)
@@ -56,7 +60,7 @@ public class Policy
    }
    
    /**
-      setProvider A mutator method to store the provider name.
+      setProvider A mutator/setter method to store the provider name.
       @param provider The providerName.
    */
    public void setProvider(String provider)
@@ -65,7 +69,7 @@ public class Policy
    }
    
    /**
-      setFirstName A mutator method to store the user's first name.
+      setFirstName A mutator/setter method to store the user's first name.
       @param fName The user's name.
    */
    public void setFirstName(String fName)
@@ -74,7 +78,7 @@ public class Policy
    }
    
    /**
-      setLastName A mutator method to store the user's last name.
+      setLastName A mutator/setter method to store the user's last name.
       @param lName The user's last name.
    */
    public void setLastName(String lName)
@@ -83,7 +87,7 @@ public class Policy
    }
    
    /**
-      setAge A mutator method to store the age.
+      setAge A mutator/setter method to store the age.
       @param a The user's age.
    */
    public void setAge(int a)
@@ -92,7 +96,7 @@ public class Policy
    }
    
    /**
-      setSmoke A mutator method to store the smoking status.
+      setSmoke A mutator/setter method to store the smoking status.
       @param s The smoking status.
    */
    public void setSmoke(String s)
@@ -101,7 +105,7 @@ public class Policy
    }
    
    /**
-      setHeight A mutator method to store the user's height.
+      setHeight A mutator/setter method to store the user's height.
       @param h The policy holder's height.
    */
    public void setHeight(double h)
@@ -110,7 +114,7 @@ public class Policy
    }
    
    /**
-      setWeight A mutator method to store the user's weight.
+      setWeight A mutator/setter method to store the user's weight.
       @param w The policy holder's weight.
    */
    public void setWeight(double w)
@@ -121,7 +125,7 @@ public class Policy
    
    
    /**
-      getPolicyNum An accessor method.
+      getPolicyNum An accessor/getter method.
       @return The policy number.
    */
    public int getPolicyNum()
@@ -130,7 +134,7 @@ public class Policy
    }
    
    /**
-      getProvider An accessor method
+      getProvider An accessor/getter method
       @return The Provider's name.
    */
    public String getProvider()
@@ -139,7 +143,7 @@ public class Policy
    }
    
    /**
-      getFirstName An accessor method.
+      getFirstName An accessor/getter method.
       @return The user's name.
    */
    public String getFirstName()
@@ -148,7 +152,7 @@ public class Policy
    }
    
    /**
-      getLastName An accessor method.
+      getLastName An accessor/getter method.
       @return The user's last name.
    */
    public String getLastName()
@@ -157,7 +161,7 @@ public class Policy
    }
    
    /**
-      getAge An accessor method.
+      getAge An accessor/getter method.
       @return The user's age.
    */
    public int getAge()
@@ -166,7 +170,7 @@ public class Policy
    }
    
    /**
-      getSmoke An accessor method.
+      getSmoke An accessor/getter method.
       @return The user's smoking status
    */
    public String getSmoke()
@@ -175,7 +179,7 @@ public class Policy
    }
    
    /**
-      getHeight An accessor method.
+      getHeight An accessor/getter method.
       @return The user's height
    */
    public double getHeight()
@@ -184,7 +188,7 @@ public class Policy
    }
    
    /**
-      getWeight An accessor method.
+      getWeight An accessor/getter method.
       @return The user's weight
    */
    public double getWeight()
