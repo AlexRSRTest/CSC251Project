@@ -74,19 +74,24 @@ public class Project_Alex_SantiagoResendiz
    /**
       The getInfo method will display the user's their own inputs,
       as well as the calculations to thier BMI and Policy price.
+      @param list The ArrayList reference variable containing every Policy object stored.
    */
    public static void getInfo(ArrayList<Policy> list)
    {
       // Display the user's input.
-      System.out.println("\n\nPolicy Number: " + user.getPolicyNum());
-      System.out.println("Provider Name: " + user.getProvider());
-      System.out.println("Policyholder's First Name: " + user.getFirstName());
-      System.out.println("Policyholder's Last Name: " + user.getLastName());
-      System.out.println("Policyholder's Age: " + user.getAge());
-      System.out.println("Policyholder's Smoking Status: " + user.getSmoke());
-      System.out.printf("Policyholder's Height: %,.1f inches\n", user.getHeight());
-      System.out.printf("Policyholder's Weight: %,.1f pounds\n", user.getWeight());
-      System.out.printf("Policyholder's BMI: %,.2f\n", user.calculateBMI());
-      System.out.printf("Policy Price: $%,.2f\n", user.insurancePrice());
+      for (Policy displayList : list) {
+         System.out.println("Policy Number: " + displayList.getPolicyNum());
+         System.out.println("Provider Name: " + displayList.getProvider());
+         System.out.println("Policyholder's First Name: " + displayList.getFirstName());
+         System.out.println("Policyholder's Last Name: " + displayList.getLastName());
+         System.out.println("Policyholder's Age: " + displayList.getAge());
+         System.out.println("Policyholder's Smoking Status(smoker/non-smoker): " + displayList.getSmoke());
+         System.out.printf("Policyholder's Height: %,.1f inches\n", displayList.getHeight());
+         System.out.printf("Policyholder's Weight: %,.1f pounds\n", displayList.getWeight());
+         System.out.printf("Policyholder's BMI: %,.2f\n", displayList.calculateBMI());
+         System.out.printf("Policy Price: $%,.2f\n", displayList.insurancePrice());
+         
+         System.out.println("\n");
+      }
    }
 }
