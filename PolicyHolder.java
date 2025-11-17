@@ -207,7 +207,7 @@ public class PolicyHolder
                                  "Policyholder's Smoking Status (Y/N): %s\n" +
                                  "Policyholder's Height: %,.1f inches\n" +
                                  "Policyholder's Weight: %,.1f pounds\n" +
-                                 "Policyholder's BMI: %,.2f\n"
+                                 "Policyholder's BMI: %,.2f"
                                  , firstName, lastName, age, smoke, height, weight, calculateBMI()); 
       return str;
    }

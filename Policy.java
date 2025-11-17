@@ -11,7 +11,7 @@ public class Policy
    private String providerName;
    private PolicyHolder policyH;
    
-   private static int numPolicies = 0;
+   public static int numPolicies = 0;
    
    public Policy()
    {
@@ -97,7 +97,7 @@ public class Policy
    public String toString()
    {
       String str = String.format("Policy Number: " + policyNumber +
-                                 "Provider Name: " + providerName +
+                                 "\nProvider Name: " + providerName +
                                  "\n" + policyH + "\nPolicy Price: $%,.2f", insurancePrice());
       
       return str;

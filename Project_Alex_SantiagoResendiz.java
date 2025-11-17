@@ -32,8 +32,8 @@ public class Project_Alex_SantiagoResendiz
    public static void setInfo(ArrayList<Policy> list) throws IOException
    {
       // Temp Variables to hold the values
-      int tempNum = 0, tempAge = 0;
-      String provider = "", fName = "", lName = "", smokeStatus = "";
+      int tempAge = 0;
+      String tempNum = "", provider = "", fName = "", lName = "", smokeStatus = "";
       double tempHeight = 0.0, tempWeight = 0.0;
       
       // Create a try-with-resources statement to automatically close the file object.
@@ -41,9 +41,7 @@ public class Project_Alex_SantiagoResendiz
       {
          // This while statement will continue until there isn't any text in the Text file.
          while (inputFile.hasNext()) {
-            tempNum = inputFile.nextInt();
-            // Clear the buffer
-            inputFile.nextLine();
+            tempNum = inputFile.nextLine();
             provider = inputFile.nextLine();
             fName = inputFile.nextLine();
             lName = inputFile.nextLine();
@@ -66,7 +64,7 @@ public class Project_Alex_SantiagoResendiz
             // Finally for each individual user, they'll be added separately into the list ArrayList
             // That will stored in memory as a Policy object. Additionally, every information gathered
             // will be included into the instance.
-            list.add(new Policy(tempNum, provider, fName, lName, tempAge, smokeStatus, tempHeight, tempWeight));
+            list.add(new Policy(tempNum, provider, new PolicyHolder(fName, lName, tempAge, smokeStatus, tempHeight, tempWeight)));
          }
       }
    }
@@ -81,23 +79,15 @@ public class Project_Alex_SantiagoResendiz
       int totalSmokers = 0;
       // Display the ArrayList's instances info.
       for (Policy displayList : list) {
-         System.out.println("Policy Number: " + displayList.getPolicyNum());
-         System.out.println("Provider Name: " + displayList.getProvider());
-         System.out.println("Policyholder's First Name: " + displayList.getFirstName());
-         System.out.println("Policyholder's Last Name: " + displayList.getLastName());
-         System.out.println("Policyholder's Age: " + displayList.getAge());
-         System.out.println("Policyholder's Smoking Status(smoker/non-smoker): " + displayList.getSmoke());
-         System.out.printf("Policyholder's Height: %,.1f inches\n", displayList.getHeight());
-         System.out.printf("Policyholder's Weight: %,.1f pounds\n", displayList.getWeight());
-         System.out.printf("Policyholder's BMI: %,.2f\n", displayList.calculateBMI());
-         System.out.printf("Policy Price: $%,.2f\n", displayList.insurancePrice());
+         System.out.println(displayList);
          
-         if (displayList.getSmoke().equalsIgnoreCase("smoker")) {
+         if (displayList.getPolicyHolder().getSmoke().equalsIgnoreCase("smoker")) {
             totalSmokers++;
          }
          System.out.println("\n");
       }
       
+      System.out.println("There were " + Policy.numPolicies + " Policy objects created.");
       System.out.println("The number of policies with a smoker is: " + totalSmokers);
       System.out.println("The number of policies with a non-smoker is: " + (list.size() - totalSmokers));
    }
