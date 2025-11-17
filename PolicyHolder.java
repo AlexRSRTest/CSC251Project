@@ -1,8 +1,6 @@
 public class PolicyHolder
 {
    // Fields
-   private int policyNumber;
-   private String providerName;
    private String firstName;
    private String lastName;
    private int age;
@@ -13,8 +11,6 @@ public class PolicyHolder
    // No-arg Constructor
    public PolicyHolder()
    {
-      policyNumber = 0;
-      providerName = "";
       firstName = "";
       lastName = "";
       age = 0;
@@ -25,8 +21,6 @@ public class PolicyHolder
    
    /**
       Arg Constructor
-      @param num The policyNumber as an int.
-      @param provider The providerName as a string.
       @param fName The user's name, string data type.
       @param lName The user's last name, string data type.
       @param a The user's age, int data type.
@@ -34,10 +28,8 @@ public class PolicyHolder
       @param h The policy holder's height, double data type.
       @param w The policy holder's weight, double data type.
    */
-   public PolicyHolder(int num, String provider, String fName, String lName, int a, String s, double h, double w)
+   public PolicyHolder(String fName, String lName, int a, String s, double h, double w)
    {
-      policyNumber = num;
-      providerName = provider;
       firstName = fName;
       lastName = lName;
       age = a;
@@ -46,22 +38,14 @@ public class PolicyHolder
       weight = w;
    }
    
-   /**
-      setPolicyNum A mutator/setter method to store the policy number.
-      @param num THe policy number.
-   */
-   public void setPolicyNum(int num)
+   public PolicyHolder(PolicyHolder obj2)
    {
-      policyNumber = num;
-   }
-   
-   /**
-      setProvider A mutator/setter method to store the provider name.
-      @param provider The providerName.
-   */
-   public void setProvider(String provider)
-   {
-      providerName = provider;
+      this.firstName = obj2.getFirstName();
+      this.lastName = obj2.getLastName();
+      this.age = obj2.getAge();
+      this.smoke = obj2.getSmoke();
+      this.height = obj2.getHeight();
+      this.weight = obj2.getWeight();
    }
    
    /**
@@ -116,26 +100,6 @@ public class PolicyHolder
    public void setWeight(double w)
    {
       weight = w;
-   }
-   
-   
-   
-   /**
-      getPolicyNum An accessor/getter method.
-      @return The policy number.
-   */
-   public int getPolicyNum()
-   {
-      return policyNumber;
-   }
-   
-   /**
-      getProvider An accessor/getter method
-      @return The Provider's name.
-   */
-   public String getProvider()
-   {
-      return providerName;
    }
    
    /**
@@ -233,5 +197,18 @@ public class PolicyHolder
       }
       
       return additionalFee;
+   }
+   
+   public String toString()
+   {
+      String str = String.format("Policyholder's First Name: %s\n" +
+                                 "Policyholder's Last Name: %s\n" +
+                                 "Policyhilder's Age: %d\n" +
+                                 "Policyholder's Smoking Status (Y/N): %s\n" +
+                                 "Policyholder's Height: %,.1f inches\n" +
+                                 "Policyholder's Weight: %,.1f pounds\n" +
+                                 "Policyholder's BMI: %,.2f\n"
+                                 , firstName, lastName, age, smoke, height, weight, calculateBMI()); 
+      return str;
    }
 }
