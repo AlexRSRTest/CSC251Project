@@ -11,11 +11,14 @@ public class Policy
    private String providerName;
    private PolicyHolder policyH;
    
+   private static int numPolicies = 0;
+   
    public Policy()
    {
       policyNumber = "";
       providerName = "";
-      policyH = new policyH();
+      policyH = new PolicyHolder();
+      numPolicies++;
    }
    
    public Policy(String policyNumber, String providerName, PolicyHolder policyH)
@@ -23,6 +26,7 @@ public class Policy
       this.policyNumber = policyNumber;
       this.providerName = providerName;
       this.policyH = new PolicyHolder(policyH);
+      numPolicies++;
    }
    
    public void setPolicyNum(String policyNumber)
@@ -72,19 +76,19 @@ public class Policy
       
       additionalFee += BASE_FEE;
       
-      if (age > MIN_AGE)
+      if (policyH.getAge() > MIN_AGE)
       {
          additionalFee += ageFee;
       }
       
-      if (smoke.equals("smoker"))
+      if (policyH.getSmoke().equals("smoker"))
       {
          additionalFee += smokeFee;
       }
       
-      if (calculateBMI() > MIN_BMI)
+      if (policyH.calculateBMI() > MIN_BMI)
       {
-         additionalFee += (calculateBMI() - 35) * 20;
+         additionalFee += (policyH.calculateBMI() - 35) * 20;
       }
       
       return additionalFee;
@@ -94,7 +98,7 @@ public class Policy
    {
       String str = String.format("Policy Number: " + policyNumber +
                                  "Provider Name: " + providerName +
-                                 "\n" + policyH + "\nPolicy Price: $%,.2f", getPrice());
+                                 "\n" + policyH + "\nPolicy Price: $%,.2f", insurancePrice());
       
       return str;
    }
